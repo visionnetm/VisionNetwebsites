@@ -1,183 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VisionNet | Football Knowledge Hub</title>
-  <meta name="description" content="VisionNet is a growing football knowledge network featuring in-depth biographies, club histories, statistics and legendary careers." />
+  <meta charset="UTF-8">
+  <title>VisionNet Hub – Sports Projects & Digital Brands</title>
 
-  <!-- Favicon -->
-  <link rel="icon" href="logo.png" type="image/png" />
+  <meta name="description" content="Welcome to VisionNet – a growing network of sports projects covering football legends, iconic clubs and Formula 1. Explore players, teams and global sports stories." />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Inter', sans-serif;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
       background: #0b0f1a;
       color: #ffffff;
-      line-height: 1.6;
     }
 
     header {
-      padding: 80px 20px 60px;
+      padding: 80px 20px;
       text-align: center;
-      background: radial-gradient(circle at top, #1a237e, #0b0f1a);
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     }
 
     header img {
-      width: 120px;
-      margin-bottom: 25px;
+      width: 90px;
+      margin-bottom: 20px;
     }
 
-    header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 15px;
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
     }
 
     header p {
+      font-size: 18px;
+      color: #d0d0d0;
       max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      color: #cfd8ff;
+      margin: auto;
     }
 
     section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
     }
 
-    .welcome {
-      text-align: center;
-      margin-bottom: 60px;
+    h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+      border-left: 5px solid #00c6ff;
+      padding-left: 15px;
     }
 
-    .welcome h2 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-    }
-
-    .welcome p {
-      max-width: 800px;
-      margin: 0 auto;
-      color: #b0b8ff;
-    }
-
-    .categories {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
     }
 
     .card {
-      background: linear-gradient(180deg, #141a33, #0f1429);
-      border-radius: 16px;
-      padding: 35px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      background: #151a2d;
+      padding: 25px;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      transform: translateY(-6px);
     }
 
     .card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-    }
-
-    .card p {
-      color: #c7ccff;
-      margin-bottom: 20px;
+      margin-top: 0;
+      font-size: 22px;
     }
 
     .card a {
-      display: inline-block;
+      display: block;
+      color: #00c6ff;
       text-decoration: none;
-      color: #ffffff;
-      font-weight: 600;
-      padding: 10px 18px;
-      border-radius: 10px;
-      background: linear-gradient(90deg, #3f51ff, #6a7bff);
+      margin: 8px 0;
     }
 
     .card a:hover {
-      opacity: 0.9;
+      text-decoration: underline;
     }
 
     footer {
-      padding: 40px 20px;
       text-align: center;
-      background: #080b16;
-      color: #7f88ff;
-      font-size: 0.9rem;
-    }
-
-    footer span {
-      color: #ffffff;
-      font-weight: 600;
+      padding: 30px 20px;
+      background: #070a13;
+      font-size: 14px;
+      color: #888;
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <!-- Replace this image with your VisionNet logo -->
-    <img src="logo.png" alt="VisionNet Logo" />
-    <h1>VisionNet</h1>
-    <p>A connected football knowledge network built for fans who want depth, accuracy and legendary stories.</p>
-  </header>
+<header>
+  <!-- Cserélhető logó -->
+  <img src="logo.png" alt="VisionNet Logo">
 
-  <section>
-    <div class="welcome">
-      <h2>Welcome to VisionNet</h2>
-      <p>
-        VisionNet is a long-term football project designed to grow into a large, interconnected knowledge system.
-        Each site focuses on a single topic — a legendary player, an iconic club, or a historic era — and all of them
-        are linked together through this central hub.
-      </p>
+  <h1>Welcome to VisionNet</h1>
+  <p>
+    VisionNet is a growing digital network focused on sports storytelling,
+    legendary athletes, iconic football clubs and global competitions.
+    This hub connects all current and future projects in one place.
+  </p>
+</header>
+
+<section>
+  <h2>Players</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Football Legends</h3>
+      <a href="https://ronaldo-biography-597i.vercel.app/">Cristiano Ronaldo – Biography & Career</a>
+      <a href="https://messifansite.vercel.app/">Lionel Messi – Career & Achievements</a>
+
+      <!-- Kitölthető linkek -->
+      <a href="#">Neymar Jr. (coming soon)</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Football Clubs</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Historic Clubs</h3>
+      <a href="https://realmadridclubdefootball.vercel.app/">Real Madrid – Club History & Legacy</a>
+
+      <!-- Kitölthető linkek -->
+      <a href="#">FC Barcelona – History (coming soon)</a>
+      <a href="#">Manchester United – Club Story (coming soon)</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Formula 1 & Global Sports</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Formula 1 Drivers</h3>
+      <a href="#">Lewis Hamilton – Career & Records</a>
+      <a href="#">Charles Leclerc – Ferrari Journey</a>
     </div>
 
-    <div class="categories">
-      <div class="card">
-        <h3>Legendary Players</h3>
-        <p>In-depth biographies, career statistics, trophies, records and defining moments of football’s greatest icons.</p>
-        <a href="https://ronaldo-biography-597i.vercel.app/">Explore Players</a>
-      </div>
-
-      <div class="card">
-        <h3>Historic Clubs</h3>
-        <p>Complete club histories, golden eras, legendary squads and unforgettable matches.</p>
-        <a href="https://realmadridclubdefootball.vercel.app/">Explore Clubs</a>
-      </div>
-
-      <div class="card">
-        <h3>Football Statistics</h3>
-        <p>Goals, assists, appearances, titles and records presented in a clear, easy-to-read format.</p>
-        <a href="#">View Statistics</a>
-      </div>
-
-      <div class="card">
-        <h3>Projects in Progress</h3>
-        <p>New pages and football topics currently under development inside the VisionNet ecosystem.</p>
-        <a href="https://messifansite.vercel.app/">See New Projects</a>
-      </div>
+    <div class="card">
+      <h3>Football Competitions</h3>
+      <a href="#">FIFA World Cup – History & Winners</a>
+      <a href="#">Ballon d'Or – All-Time Legends</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    © 2026 <span>VisionNet</span> — Built step by step with a long-term vision.
-  </footer>
+<footer>
+  © 2026 VisionNet – Independent Sports Projects Network
+</footer>
 
 </body>
-</html>p
+</html>
