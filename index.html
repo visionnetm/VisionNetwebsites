@@ -1,379 +1,222 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VN website Hub</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<title>VisionNet Hub | All Websites in One Place</title>
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #0f0d09;
-      color: #e8dcc8;
-      min-height: 100vh;
-    }
+<meta name="description" content="Welcome to VisionNet Hub – discover all our football, Formula 1 and sports projects in one place.">
 
-    /* --- HEADER --- */
-    .header { position: relative; }
+<link rel="icon" href="favicon.ico">
 
-    .logo {
-      position: absolute; left: 16px; top: 16px; z-index: 10;
-      width: 48px; height: 48px; border-radius: 10px;
-      border: 1px solid #2a2520; object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0,0,0,.5);
-    }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-    .edit-btn {
-      position: absolute; right: 16px; top: 16px; z-index: 10;
-      background: #1e1b16; color: #e8dcc8; border: 1px solid #2a2520;
-      padding: 8px 16px; border-radius: 8px; cursor: pointer;
-      font-size: 14px; font-weight: 600;
-      transition: background .2s;
-    }
-    .edit-btn:hover { background: #2a2520; }
-    .edit-btn.active { background: #c0392b; border-color: #c0392b; }
+* { margin:0; padding:0; box-sizing:border-box; }
 
-    .banner-wrap {
-      width: 100%; height: 220px; overflow: hidden; position: relative;
-    }
-    .banner-wrap img {
-      width: 100%; height: 100%; object-fit: cover;
-    }
-    .banner-gradient {
-      position: absolute; inset: 0;
-      background: linear-gradient(to bottom, transparent 50%, #0f0d09);
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  background:#0f0d09;
+  color:#e8dcc8;
+}
 
-    .site-info {
-      text-align: center; padding: 24px 16px 8px; max-width: 700px; margin: 0 auto;
-    }
-    .site-info h1 {
-      font-size: 2rem; font-weight: 700; color: #e8dcc8;
-    }
-    .site-info p {
-      margin-top: 8px; color: #7a7060; font-size: 15px;
-    }
+/* HEADER */
 
-    /* --- EDIT INPUTS --- */
-    .edit-input {
-      width: 100%; padding: 8px 12px; border-radius: 8px;
-      border: 1px solid #2a2520; background: #1a1710;
-      color: #e8dcc8; font-size: 13px; margin-top: 8px;
-      font-family: inherit;
-    }
-    .edit-input:focus { outline: none; border-color: #5dade2; }
+.header {
+  position:relative;
+  text-align:center;
+}
 
-    .edit-row { max-width: 700px; margin: 0 auto; padding: 0 16px; }
+.logo {
+  position:absolute;
+  left:20px;
+  top:20px;
+  width:60px;
+  border-radius:12px;
+}
 
-    /* --- MAIN --- */
-    main { max-width: 700px; margin: 0 auto; padding: 16px 16px 64px; }
+.banner {
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
 
-    /* --- CATEGORY --- */
-    .category { margin-bottom: 32px; }
+.header-content {
+  padding:30px 20px;
+}
 
-    .cat-header {
-      display: flex; align-items: center; gap: 8px;
-      cursor: pointer; margin-bottom: 12px; user-select: none;
-    }
-    .cat-header h2 {
-      font-size: 1.2rem; font-weight: 700; color: #e8dcc8;
-    }
-    .cat-header .count {
-      font-size: 13px; color: #7a7060;
-    }
-    .cat-arrow {
-      width: 20px; height: 20px; fill: none; stroke: #5dade2;
-      stroke-width: 2; transition: transform .2s;
-    }
-    .cat-header.closed .cat-arrow { transform: rotate(-90deg); }
+.header-content h1 {
+  font-size:2rem;
+}
 
-    .cat-delete {
-      margin-left: auto; background: none; border: none;
-      color: #c0392b; cursor: pointer; font-size: 18px; padding: 4px 8px;
-    }
+.header-content p {
+  color:#8b806e;
+  margin-top:10px;
+}
 
-    /* --- LINK GRID --- */
-    .link-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 12px; margin-bottom: 12px;
-    }
+/* MAIN */
 
-    .link-card {
-      background: #1a1710; border: 1px solid #2a2520; border-radius: 12px;
-      padding: 16px; text-decoration: none; color: inherit;
-      transition: transform .2s, box-shadow .2s, border-color .2s;
-      display: flex; align-items: flex-start; gap: 12px;
-      position: relative;
-    }
-    .link-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(93,173,226,.15);
-      border-color: rgba(93,173,226,.3);
-    }
+main {
+  max-width:900px;
+  margin:40px auto;
+  padding:0 20px;
+}
 
-    .link-icon {
-      width: 40px; height: 40px; border-radius: 8px;
-      background: rgba(93,173,226,.15); color: #5dade2;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px; font-weight: 700; flex-shrink: 0;
-    }
+/* CATEGORY */
 
-    .link-card h3 { font-size: 15px; font-weight: 600; color: #e8dcc8; }
-    .link-card p { font-size: 13px; color: #7a7060; margin-top: 4px; }
+.category {
+  margin-bottom:50px;
+}
 
-    .card-delete {
-      position: absolute; top: -8px; right: -8px;
-      background: #c0392b; color: #fff; border: none;
-      width: 22px; height: 22px; border-radius: 50%;
-      cursor: pointer; font-size: 14px; display: none;
-      align-items: center; justify-content: center;
-    }
-    .link-card:hover .card-delete.visible { display: flex; }
+.category h2 {
+  font-size:1.4rem;
+  margin-bottom:20px;
+  border-bottom:1px solid #2a2520;
+  padding-bottom:10px;
+}
 
-    /* --- ADD LINK FORM --- */
-    .add-link-btn {
-      width: 100%; padding: 12px; border: 2px dashed rgba(93,173,226,.3);
-      border-radius: 12px; background: none; color: #5dade2;
-      cursor: pointer; font-size: 14px; font-weight: 600;
-      transition: background .2s;
-    }
-    .add-link-btn:hover { background: rgba(93,173,226,.08); }
+/* CARD GRID */
 
-    .add-form {
-      border: 1px solid rgba(93,173,226,.3); border-radius: 12px;
-      padding: 12px; background: rgba(93,173,226,.05);
-    }
-    .add-form .edit-input { margin-top: 8px; }
-    .add-form .form-btns { display: flex; gap: 8px; margin-top: 10px; }
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
 
-    .btn {
-      padding: 8px 16px; border-radius: 8px; border: none;
-      font-size: 13px; font-weight: 600; cursor: pointer;
-      transition: opacity .2s;
-    }
-    .btn-primary { background: #5dade2; color: #0f0d09; }
-    .btn-ghost { background: none; color: #7a7060; }
-    .btn:hover { opacity: .85; }
+.card {
+  background:#1a1710;
+  border:1px solid #2a2520;
+  border-radius:16px;
+  padding:20px;
+  text-decoration:none;
+  color:inherit;
+  transition:0.3s;
+}
 
-    /* --- ADD CATEGORY --- */
-    .add-cat-row {
-      display: flex; gap: 8px; margin-top: 16px;
-    }
+.card:hover {
+  transform:translateY(-5px);
+  border-color:#5dade2;
+  box-shadow:0 10px 25px rgba(93,173,226,0.2);
+}
 
-    .hidden { display: none !important; }
+.card h3 {
+  margin-bottom:8px;
+}
 
-    .empty-msg {
-      text-align: center; color: #7a7060; padding: 48px 0;
-    }
+.card p {
+  font-size:14px;
+  color:#8b806e;
+}
 
-    @media (max-width: 500px) {
-      .link-grid { grid-template-columns: 1fr; }
-      .banner-wrap { height: 160px; }
-      .site-info h1 { font-size: 1.5rem; }
-    }
-  </style>
+footer {
+  text-align:center;
+  padding:40px 20px;
+  border-top:1px solid #2a2520;
+  color:#6f6658;
+  font-size:14px;
+}
+
+@media(max-width:600px){
+  .banner{ height:160px; }
+  .logo{ width:45px; }
+}
+</style>
 </head>
+
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <div class="header">
-  <img class="logo" id="logo" src="https://via.placeholder.com/48x48/1a1a1a/5dade2?text=L" alt="Logo" />
-  <button class="edit-btn" id="editBtn" onclick="toggleEdit()">✏️ Szerkesztés</button>
 
-  <div class="banner-wrap">
-    <img id="banner" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=400&fit=crop" alt="Banner" />
-    <div class="banner-gradient"></div>
-  </div>
+  <!-- LOGO CSERÉLHETŐ -->
+  <img src="logo.png" class="logo" alt="VisionNet Logo">
 
-  <div class="edit-row edit-only hidden">
-    <input class="edit-input" id="logoUrlInput" placeholder="Logó kép URL" oninput="updateLogo()" />
-    <input class="edit-input" id="bannerUrlInput" placeholder="Banner kép URL" oninput="updateBanner()" />
-  </div>
+  <!-- BANNER CSERÉLHETŐ -->
+  <img src="banner.jpg" class="banner" alt="VisionNet Banner">
 
-  <div class="site-info">
-    <h1 id="siteName">VN website Hub</h1>
-    <p id="siteDesc">our every website in every tematic.</p>
-    <div class="edit-only hidden" style="margin-top:8px">
-      <input class="edit-input" id="siteNameInput" placeholder="Oldal neve" oninput="updateSiteInfo()" />
-      <input class="edit-input" id="siteDescInput" placeholder="Oldal leírása" oninput="updateSiteInfo()" />
-    </div>
+  <div class="header-content">
+    <!-- CÍM CSERÉLHETŐ -->
+    <h1>Welcome to VisionNet</h1>
+
+    <!-- LEÍRÁS CSERÉLHETŐ -->
+    <p>Explore our football, Formula 1 and sports projects. Everything connected in one powerful network.</p>
   </div>
 </div>
 
-<main id="main"></main>
+<main>
 
-<script>
-const STORAGE_KEY = 'link-hub-data';
-const ICONS = { github:'⌨️', code:'💻', 'book-open':'📖', globe:'🌐', link:'🔗', star:'⭐', heart:'❤️', music:'🎵', video:'🎬', image:'🖼️', mail:'✉️', shop:'🛒', game:'🎮', news:'📰' };
+<!-- ================= PLAYERS ================= -->
 
-let editing = false;
-let data = load();
+<section class="category">
+  <h2>Football Players</h2>
 
-function load() {
-  try {
-    const s = localStorage.getItem(STORAGE_KEY);
-    if (s) return JSON.parse(s);
-  } catch {}
-  return {
-    logoUrl: 'IMG_0266.png',
-    bannerUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=400&fit=crop',
-    siteName: 'Vn website Hub',
-    siteDescription: 'Our all website with all tematic.',
-    categories: [
-      { id:'1', name:'Tech', links:[
-        { id:'1a', title:'GitHub', description:'Kódtárak és projektek', url:'https://github.com', icon:'github' },
-        { id:'1b', title:'Stack Overflow', description:'Fejlesztői kérdések és válaszok', url:'https://stackoverflow.com', icon:'code' }
-      ]},
-      { id:'2', name:'Blog', links:[
-        { id:'2a', title:'Medium', description:'Cikkek és történetek', url:'https://medium.com', icon:'book-open' }
-      ]}
-    ]
-  };
-}
+  <div class="grid">
 
-function save() { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); }
-function uid() { return Math.random().toString(36).substr(2,8); }
+    <a href="https://ronaldo-biography-597i.vercel.app" class="card">
+      <h3>Cristiano Ronaldo</h3>
+      <p>Complete biography, records, career and achievements.</p>
+    </a>
 
-function toggleEdit() {
-  editing = !editing;
-  const btn = document.getElementById('editBtn');
-  btn.textContent = editing ? '✖ Kész' : '✏️ Szerkesztés';
-  btn.classList.toggle('active', editing);
-  document.querySelectorAll('.edit-only').forEach(el => el.classList.toggle('hidden', !editing));
-  if (editing) {
-    document.getElementById('logoUrlInput').value = data.logoUrl;
-    document.getElementById('bannerUrlInput').value = data.bannerUrl;
-    document.getElementById('siteNameInput').value = data.siteName;
-    document.getElementById('siteDescInput').value = data.siteDescription;
-  }
-  render();
-}
+    <a href="https://messi-biography.vercel.app" class="card">
+      <h3>Lionel Messi</h3>
+      <p>Full story, trophies, records and legacy.</p>
+    </a>
 
-function updateLogo() { data.logoUrl = document.getElementById('logoUrlInput').value; document.getElementById('logo').src = data.logoUrl; save(); }
-function updateBanner() { data.bannerUrl = document.getElementById('bannerUrlInput').value; document.getElementById('banner').src = data.bannerUrl; save(); }
-function updateSiteInfo() {
-  data.siteName = document.getElementById('siteNameInput').value;
-  data.siteDescription = document.getElementById('siteDescInput').value;
-  document.getElementById('siteName').textContent = data.siteName;
-  document.getElementById('siteDesc').textContent = data.siteDescription;
-  save();
-}
+  </div>
+</section>
 
-function toggleCategory(id) {
-  const el = document.getElementById('cat-'+id);
-  const hdr = document.getElementById('hdr-'+id);
-  el.classList.toggle('hidden');
-  hdr.classList.toggle('closed');
-}
+<!-- ================= FOOTBALL CLUBS ================= -->
 
-function removeCategory(id) {
-  data.categories = data.categories.filter(c => c.id !== id);
-  save(); render();
-}
+<section class="category">
+  <h2>Football Clubs</h2>
 
-function removeLink(catId, linkId) {
-  const cat = data.categories.find(c => c.id === catId);
-  if (cat) cat.links = cat.links.filter(l => l.id !== linkId);
-  save(); render();
-}
+  <div class="grid">
 
-function showAddForm(catId) {
-  document.getElementById('addbtn-'+catId).classList.add('hidden');
-  document.getElementById('addform-'+catId).classList.remove('hidden');
-}
+    <a href="https://realmadridclubdefootball.vercel.app" class="card">
+      <h3>Real Madrid</h3>
+      <p>History, legends, Champions League titles and modern squad.</p>
+    </a>
 
-function hideAddForm(catId) {
-  document.getElementById('addform-'+catId).classList.add('hidden');
-  document.getElementById('addbtn-'+catId).classList.remove('hidden');
-}
+    <a href="#" class="card">
+      <h3>FC Barcelona</h3>
+      <p>Coming soon – full club history and golden eras.</p>
+    </a>
 
-function addLink(catId) {
-  const t = document.getElementById('lt-'+catId).value.trim();
-  const u = document.getElementById('lu-'+catId).value.trim();
-  const d = document.getElementById('ld-'+catId).value.trim();
-  const i = document.getElementById('li-'+catId).value.trim() || 'link';
-  if (!t || !u) return;
-  const cat = data.categories.find(c => c.id === catId);
-  if (cat) { cat.links.push({ id:uid(), title:t, description:d, url:u, icon:i }); save(); render(); }
-}
+  </div>
+</section>
 
-function addCategory() {
-  const inp = document.getElementById('newCatInput');
-  const name = inp.value.trim();
-  if (!name) return;
-  data.categories.push({ id:uid(), name, links:[] });
-  inp.value = '';
-  save(); render();
-}
+<!-- ================= FORMULA 1 ================= -->
 
-function render() {
-  const main = document.getElementById('main');
-  let html = '';
+<section class="category">
+  <h2>Formula 1</h2>
 
-  data.categories.forEach(cat => {
-    const icon = ICONS[cat.icon] || '';
-    html += `<div class="category">
-      <div class="cat-header" id="hdr-${cat.id}" onclick="toggleCategory('${cat.id}')">
-        <svg class="cat-arrow" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-        <h2>${esc(cat.name)}</h2>
-        <span class="count">(${cat.links.length})</span>
-        ${editing ? `<button class="cat-delete" onclick="event.stopPropagation();removeCategory('${cat.id}')">🗑️</button>` : ''}
-      </div>
-      <div id="cat-${cat.id}">
-        <div class="link-grid">`;
+  <div class="grid">
 
-    cat.links.forEach(link => {
-      const ic = ICONS[link.icon] || ICONS.link;
-      html += `<a class="link-card" href="${esc(link.url)}" target="_blank" rel="noopener">
-        ${editing ? `<button class="card-delete visible" onclick="event.preventDefault();event.stopPropagation();removeLink('${cat.id}','${link.id}')">✕</button>` : ''}
-        <div class="link-icon">${ic}</div>
-        <div>
-          <h3>${esc(link.title)}</h3>
-          <p>${esc(link.description)}</p>
-        </div>
-      </a>`;
-    });
+    <a href="formula1.html" class="card">
+      <h3>Formula 1 History</h3>
+      <p>Champions, tragedies, records and 2026 rule changes.</p>
+    </a>
 
-    html += `</div>`;
+    <a href="#" class="card">
+      <h3>Lewis Hamilton</h3>
+      <p>Career, titles and records.</p>
+    </a>
 
-    if (editing) {
-      html += `<button class="add-link-btn" id="addbtn-${cat.id}" onclick="showAddForm('${cat.id}')">＋ Új link hozzáadása</button>
-      <div class="add-form hidden" id="addform-${cat.id}">
-        <input class="edit-input" id="lt-${cat.id}" placeholder="Cím" />
-        <input class="edit-input" id="ld-${cat.id}" placeholder="Leírás" />
-        <input class="edit-input" id="lu-${cat.id}" placeholder="URL (https://...)" />
-        <input class="edit-input" id="li-${cat.id}" placeholder="Ikon (github, globe, code, star, heart, music...)" />
-        <div class="form-btns">
-          <button class="btn btn-primary" onclick="addLink('${cat.id}')">Hozzáadás</button>
-          <button class="btn btn-ghost" onclick="hideAddForm('${cat.id}')">Mégse</button>
-        </div>
-      </div>`;
-    }
+    <a href="#" class="card">
+      <h3>Charles Leclerc</h3>
+      <p>Ferrari journey and future ambitions.</p>
+    </a>
 
-    html += `</div></div>`;
-  });
+  </div>
+</section>
 
-  if (editing) {
-    html += `<div class="add-cat-row">
-      <input class="edit-input" id="newCatInput" placeholder="Új kategória neve..." onkeydown="if(event.key==='Enter')addCategory()" />
-      <button class="btn btn-primary" onclick="addCategory()">＋ Hozzáadás</button>
-    </div>`;
-  }
+</main>
 
-  if (data.categories.length === 0 && !editing) {
-    html += `<p class="empty-msg">Még nincsenek kategóriák. Kattints a „Szerkesztés" gombra!</p>`;
-  }
-
-  main.innerHTML = html;
-}
-
-function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
-
-render();
-</script>
+<footer>
+© 2026 VisionNet | Independent sports media project
+</footer>
 
 </body>
 </html>
-
